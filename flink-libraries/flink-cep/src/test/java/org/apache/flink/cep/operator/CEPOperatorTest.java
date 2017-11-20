@@ -244,6 +244,11 @@ public class CEPOperatorTest extends TestLogger {
 			BasicTypeInfo.INT_TYPE_INFO);
 
 		try {
+			String rocksDbPath = tempFolder.newFolder().getAbsolutePath();
+ 			RocksDBStateBackend rocksDBStateBackend = new RocksDBStateBackend(new MemoryStateBackend());
+ 			rocksDBStateBackend.setDbStoragePath(rocksDbPath);
+ 
+ 			harness.setStateBackend(rocksDBStateBackend);
 			harness.setup(
 				new KryoSerializer<>(
 					(Class<Either<Tuple2<Map<String, List<Event>>, Long>, Map<String, List<Event>>>>) (Object) Either.class,
