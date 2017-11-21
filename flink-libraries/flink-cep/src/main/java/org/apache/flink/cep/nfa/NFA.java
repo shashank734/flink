@@ -40,18 +40,12 @@ import org.apache.flink.core.memory.DataOutputViewStreamWrapper;
 import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.util.Preconditions;
 
-import com.google.common.base.Predicate;
-import com.google.common.collect.Iterators;
-
-import javax.annotation.Nullable;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -734,7 +728,7 @@ public class NFA<T> implements Serializable {
 
 		@Override
 		public NFASerializer<T> duplicate() {
- 			return new NFASerializer<>(eventSerializer.duplicate());
+			return new NFASerializer<>(eventSerializer.duplicate());
 		}
 
 		@Override

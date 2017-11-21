@@ -858,16 +858,16 @@ public class SharedBuffer<K extends Serializable, V> implements Serializable {
 		}
 
 		public TypeSerializer<DeweyNumber> getVersionSerializer() {
- 			return versionSerializer;
- 		}
- 
- 		public TypeSerializer<K> getKeySerializer() {
- 			return keySerializer;
- 		}
- 
- 		public TypeSerializer<V> getValueSerializer() {
- 			return valueSerializer;
- 		}
+			return versionSerializer;
+		}
+
+		public TypeSerializer<K> getKeySerializer() {
+			return keySerializer;
+		}
+
+		public TypeSerializer<V> getValueSerializer() {
+			return valueSerializer;
+		}
 
 		@Override
 		public boolean isImmutableType() {
@@ -1101,18 +1101,18 @@ public class SharedBuffer<K extends Serializable, V> implements Serializable {
 		@Override
 		public boolean equals(Object obj) {
 			if (obj == this) {
- 				return true;
- 			}
- 
- 			if (obj == null || !Objects.equals(obj.getClass(), getClass())) {
- 				return false;
- 			}
- 
- 			SharedBufferSerializer other = (SharedBufferSerializer) obj;
- 			return
- 					Objects.equals(keySerializer, other.getKeySerializer()) &&
- 					Objects.equals(valueSerializer, other.getValueSerializer()) &&
- 					Objects.equals(versionSerializer, other.getVersionSerializer());
+				return true;
+			}
+
+			if (obj == null || !Objects.equals(obj.getClass(), getClass())) {
+				return false;
+			}
+
+			SharedBufferSerializer other = (SharedBufferSerializer) obj;
+			return
+					Objects.equals(keySerializer, other.getKeySerializer()) &&
+					Objects.equals(valueSerializer, other.getValueSerializer()) &&
+					Objects.equals(versionSerializer, other.getVersionSerializer());
 		}
 
 		@Override
