@@ -904,7 +904,7 @@ public class SharedBuffer<K extends Serializable, V> implements Serializable {
 		}
 
 		@Override
-		public SharedBuffer<K, V> copy(SharedBuffer from, SharedBuffer reuse) {public SharedBuffer<K, V> copy(SharedBuffer<K, V> from, SharedBuffer<K, V> reuse) {
+		public SharedBuffer<K, V> copy(SharedBuffer<K, V> from, SharedBuffer<K, V> reuse) {
 			return copy(from);
 		}
 
